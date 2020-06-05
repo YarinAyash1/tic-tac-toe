@@ -1,0 +1,147 @@
+$game-width: 250px;
+$border-color: #ddd;
+$display: grid;
+$error-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+:root{
+    font-size: 1px; /* for using REM units */
+}
+#root{
+    height: 100vh;
+    display: $display;
+}
+.game{
+    max-width: $game-width;
+    margin: auto;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 14rem;
+    width: 100%;
+    position: relative;
+    &-board{
+        display: $display;
+        border: 1px solid $border-color;
+    }
+    &-settings{
+        display: $display;
+        grid-gap: 15px;
+        .error{
+            border: 1px solid $error-color;
+        }
+    }
+    &-info{
+        font-size: 20rem;
+        text-align: center;
+        margin-bottom: 20rem;
+        position: absolute;
+        top: -40px;
+        left: 0;
+        right: 0;
+    }
+    &-players{
+        position: relative;
+        label{
+            display: block;
+            width: 100%;
+            font-size: 18rem;
+            margin-bottom: 10rem;
+        }
+        img{
+            width: 20px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        input{
+            width: 100%;
+            border-radius: 3px;
+            border: 1px solid $border-color;
+            line-height: 32rem;
+            font-size: 14px;
+        }
+    }
+    &-play{
+        width: 100%;
+        border: 1px solid $border-color;
+        border-radius: 3px;
+        background-color: #ddd;
+        line-height: 30rem;
+        font-size: 16rem;
+        font-weight: bold;
+        color:#000;
+    }
+    .player1.icon {
+        color: #000;
+        position: absolute;
+        margin-top: 0;
+        margin-left: 0;
+        width: 21px;
+        height: 21px;
+      
+        &:before {
+          content: '';
+          position: absolute;
+          top: 10px;
+          width: 21px;
+          height: 1px;
+          background-color: #000;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+      
+        &:after {
+          content: '';
+          position: absolute;
+          top: 10px;
+          width: 21px;
+          height: 1px;
+          background-color: #000;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+    &-row{
+        grid-template-columns: repeat(3, 1fr);
+        display: inherit;
+        text-align: center;
+    
+        border-bottom: 1px solid $border-color;
+        &:last-child{
+            border-bottom: unset;
+        }
+        
+    }
+    &-square{
+        display: inherit;
+        align-items: center;
+        cursor: pointer;
+        background: #f8f8f8;
+        height: 82px;
+        border-right: 1px solid $border-color;
+        transition: 0.3s background;
+        font-size: 15rem;
+        img{
+            width: 50px;
+            height: 50px;
+            margin: auto;
+        }
+        &:last-child{
+            border-right: unset;
+        }
+        &:hover{
+            background: #ddd;
+        }
+    }
+    &-reset{
+        background: $border-color;
+        width: 100%;
+        line-height: 35px;
+        font-size: 20rem;
+        font-weight: 700;
+        border: 0;
+        border-radius: 3px;
+        position: absolute;
+        bottom: -70px;
+        cursor: pointer;
+    }
+}
