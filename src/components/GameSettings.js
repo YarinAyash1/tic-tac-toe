@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import X from './img/X.svg'
-import O from './img/O.svg'
+import X from '../img/X.svg'
+import O from '../img/O.svg'
 class GameSettings extends Component {
   constructor(){
     super();
