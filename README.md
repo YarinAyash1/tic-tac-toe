@@ -1,4 +1,4 @@
-![tic-tac-toe']{https://prnt.sc/sup9bj}
+<img width="451" alt="Screen Shot 2020-06-06 at 4 23 12" src="https://user-images.githubusercontent.com/6868234/83933133-a4d82c00-a7ae-11ea-80d5-47987feaa794.png">
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
