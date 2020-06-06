@@ -51,14 +51,18 @@ class Game extends Component {
     })
   }
 
-  finishGame = () => {
+  finishGame = (currentTurn) => {
     let {player1, player2} = this.state;
     let winner;
-    if(this.props.currentTurn){
-      winner = player1
+    console.log(currentTurn)
+    if(currentTurn === true){
+      winner = `Winner is ${player1}`
     }
-    else{
-      winner = player2
+    else if(currentTurn === 'tie'){
+      winner = 'Tie'
+    }
+    else if(currentTurn === false) {
+      winner = `Winner is ${player2}`
     }
 
     this.setState({
@@ -79,7 +83,7 @@ class Game extends Component {
     }
     return (
       <div className="game">
-          {players && !winner ? <div className="game-info">{playersInfo}</div> : <div className="game-info">The Winner is { winner }</div> }
+          {players && !winner ? <div className="game-info">{playersInfo}</div> : <div className="game-info">{ winner }</div> }
           { this.state.run ? <Board players={players} status={status} finish={this.finishGame} /> : <GameSettings errors={errors} add={this.setPlayers} start={this.startGame} /> }
           { this.state.finish ? <button className="game-reset" onClick={this.resetGame}>Reset</button>  : ''}
       </div>

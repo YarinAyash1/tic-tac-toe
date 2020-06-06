@@ -1,3 +1,6 @@
+![tic-tac-toe']{https://prnt.sc/sup9bj}
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

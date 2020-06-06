@@ -24,12 +24,20 @@ class Board extends Component {
       squares: squares,
       currentTurn: !this.state.currentTurn,
     }, () => {
-      if(this.Winner(squares)){
+      if(this.Winner(squares) === 'X' || this.Winner(squares) === 'O'){
         this.setState({
           squares: Array(9).fill(null),
-          currentTurn: this.state.currentTurn,
+          currentTurn: !this.state.currentTurn,
         }, () => {
           this.props.finish(this.state.currentTurn)
+        })
+      }
+      else if(this.Winner(squares) === 'tie'){
+        this.setState({
+          squares: Array(9).fill(null),
+          currentTurn: !this.state.currentTurn,
+        }, () => {
+          this.props.finish('tie')
         })
       }
     });
@@ -49,8 +57,14 @@ class Board extends Component {
 
     for (let i = 0; i < lines.length; i++) {
       const [x, y, z] = lines[i];
+
+      let squaresLen = squares.filter(square => square != null).length;
       if (squares[x] && squares[x] === squares[y] && squares[x] === squares[z]) {
         return squares[x];
+      }
+      else if (squaresLen > 8){
+        return 'tie'
+
       }
     }
     return null;
