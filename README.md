@@ -1,4 +1,4 @@
-Tic-Tac-Toe Game - React
+Tic-Tac-Toe Game - React Without Reack Hooks
 
 <img width="451" alt="Screen Shot 2020-06-06 at 4 23 12" src="https://user-images.githubusercontent.com/6868234/83933133-a4d82c00-a7ae-11ea-80d5-47987feaa794.png">
 
