@@ -13,7 +13,16 @@ class Row extends Component {
       <div className="game-row">
         {
           row.map((square) => {
-            return <Square players={players} status={status} key={square} square={square} currentTurn={currentTurn} click={this.handleClick} />
+            return (
+              <Square 
+                players={players}
+                status={status}
+                key={square}
+                square={square} 
+                currentTurn={currentTurn} 
+                click={this.handleClick} 
+              />
+            )
           })
         }
 
